@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Share+Tech+Mono&display=swap');
+
+:root {
+  /* Default Dark Mode (Terminal CSS style) */
+  --bg-color: #05060c;
+  --bg-dots: rgba(0, 240, 255, 0.05);
+  --card-bg: rgba(13, 17, 33, 0.85);
+  --border-color: #1e293b;
+  --text-color: #94a3b8;
+  --text-header: #f8fafc;
+  --accent-color: #00f0ff;
+  --accent-glow: rgba(0, 240, 255, 0.45);
+  --accent-bg: rgba(0, 240, 255, 0.06);
+  --accent-border: rgba(0, 240, 255, 0.25);
+  --text-success: #10b981;
+  --text-warning: #f59e0b;
+  --text-danger: #ef4444;
+  --shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+  --crt-scanline: rgba(0, 240, 255, 0.015);
+  
+  --font-mono: 'JetBrains Mono', 'Share Tech Mono', ui-monospace, monospace;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  font-family: var(--font-mono);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root.light-mode {
+  /* Light Mode (Slate Cyber style) */
+  --bg-color: #f1f5f9;
+  --bg-dots: rgba(2, 132, 199, 0.04);
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --border-color: #cbd5e1;
+  --text-color: #334155;
+  --text-header: #0f172a;
+  --accent-color: #0284c7;
+  --accent-glow: rgba(2, 132, 199, 0.35);
+  --accent-bg: rgba(2, 132, 199, 0.05);
+  --accent-border: rgba(2, 132, 199, 0.25);
+  --text-success: #15803d;
+  --text-warning: #b45309;
+  --text-danger: #b91c1c;
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  --crt-scanline: rgba(0, 0, 0, 0.005);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(var(--bg-dots) 1px, transparent 1px),
+    radial-gradient(var(--bg-dots) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* CRT Scanline Overlay Effect for Tech Aesthetic */
+.crt-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, var(--crt-scanline) 50%);
+  background-size: 100% 4px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Smooth transitions */
+a, button, input, select, textarea {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
